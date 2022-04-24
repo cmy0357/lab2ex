@@ -14,6 +14,10 @@ public class MarkdownParse {
             return toReturn;
         }
 
+        if (! markdown.contains("[") || ! markdown.contains("]")) {
+            return toReturn;
+        }
+
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
